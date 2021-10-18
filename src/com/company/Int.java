@@ -14,7 +14,7 @@ package com.company;
 public class Int {
     private int value;
 
-    static public void switchValues(Int first, Int second) {
+    static public void swapValues(Int first, Int second) {
         int temp = first.value;
         first.value = second.value;
         second.value = temp;
@@ -24,7 +24,7 @@ public class Int {
         this.value = value;
     }
 
-    public void switchValues(Int other) {
+    public void swapValues(Int other) {
         int temp = value;
         value = other.value;
         other.value = temp;

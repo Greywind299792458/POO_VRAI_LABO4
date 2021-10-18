@@ -14,12 +14,12 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class Sort {
-    private enum SwitchMethod {
-        SWITCH_ARRAY_ELEMENTS,
-        SWITCH_INT_VALUES_WITCH_STATIC_METHOD,
-        SWITCH_INT_VALUES_WITCH_INSTANCE_METHOD
+    private enum SwapMethod {
+        SWAP_ARRAY_ELEMENTS,
+        SWAP_INT_VALUES_WITCH_STATIC_METHOD,
+        SWAP_INT_VALUES_WITCH_INSTANCE_METHOD
     }
-    private static final SwitchMethod SWITCH_METHOD_FOR_SORTING = SwitchMethod.SWITCH_INT_VALUES_WITCH_INSTANCE_METHOD;
+    private static final SwapMethod SWAP_METHOD_FOR_SORTING = SwapMethod.SWAP_INT_VALUES_WITCH_INSTANCE_METHOD;
 
     public static void main(String[] args) {
         if (argsAreValid(args)) {
@@ -79,15 +79,15 @@ public class Sort {
             sortingHasProgressed = false;
             for (int valueIndex = 1; valueIndex < values.length; valueIndex++) {
                 if (values[valueIndex].getValue() < values[valueIndex - 1].getValue()) {
-                    switch (SWITCH_METHOD_FOR_SORTING) {
-                        case SWITCH_ARRAY_ELEMENTS:
-                            switchArrayElements(values, valueIndex, valueIndex - 1);
+                    switch (SWAP_METHOD_FOR_SORTING) {
+                        case SWAP_ARRAY_ELEMENTS:
+                            swapArrayElements(values, valueIndex, valueIndex - 1);
                             break;
-                        case SWITCH_INT_VALUES_WITCH_STATIC_METHOD :
-                            Int.switchValues(values[valueIndex], values[valueIndex - 1]);
+                        case SWAP_INT_VALUES_WITCH_STATIC_METHOD:
+                            Int.swapValues(values[valueIndex], values[valueIndex - 1]);
                             break;
-                        case SWITCH_INT_VALUES_WITCH_INSTANCE_METHOD:
-                            values[valueIndex].switchValues(values[valueIndex - 1]);
+                        case SWAP_INT_VALUES_WITCH_INSTANCE_METHOD:
+                            values[valueIndex].swapValues(values[valueIndex - 1]);
                             break;
                     }
                     sortingHasProgressed = true;
@@ -96,7 +96,7 @@ public class Sort {
         } while (sortingHasProgressed);
     }
 
-    private static void switchArrayElements(Int[] array, int firstIndex, int secondIndex) {
+    private static void swapArrayElements(Int[] array, int firstIndex, int secondIndex) {
         Int temp = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temp;
