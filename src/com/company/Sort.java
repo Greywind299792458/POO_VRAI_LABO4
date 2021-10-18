@@ -16,10 +16,10 @@ import java.util.regex.Pattern;
 public class Sort {
     private enum SwapMethod {
         SWAP_ARRAY_ELEMENTS,
-        SWAP_INT_VALUES_WITCH_STATIC_METHOD,
-        SWAP_INT_VALUES_WITCH_INSTANCE_METHOD
+        SWAP_INT_VALUES_WITH_STATIC_METHOD,
+        SWAP_INT_VALUES_WITH_INSTANCE_METHOD
     }
-    private static final SwapMethod SWAP_METHOD_FOR_SORTING = SwapMethod.SWAP_INT_VALUES_WITCH_INSTANCE_METHOD;
+    private static final SwapMethod SWAP_METHOD_FOR_SORTING = SwapMethod.SWAP_INT_VALUES_WITH_INSTANCE_METHOD;
 
     public static void main(String[] args) {
         if (argsAreValid(args)) {
@@ -83,10 +83,10 @@ public class Sort {
                         case SWAP_ARRAY_ELEMENTS:
                             swapArrayElements(values, valueIndex, valueIndex - 1);
                             break;
-                        case SWAP_INT_VALUES_WITCH_STATIC_METHOD:
+                        case SWAP_INT_VALUES_WITH_STATIC_METHOD:
                             Int.swapValues(values[valueIndex], values[valueIndex - 1]);
                             break;
-                        case SWAP_INT_VALUES_WITCH_INSTANCE_METHOD:
+                        case SWAP_INT_VALUES_WITH_INSTANCE_METHOD:
                             values[valueIndex].swapValues(values[valueIndex - 1]);
                             break;
                     }
