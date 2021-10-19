@@ -3,21 +3,35 @@
  * Laboratoire : POO - labo4
  * Fichier : Int.java
  * Auteurs : Elliot Ganty et Damien Maier
- * Date : 18.10.2021
+ * Date : 19.10.2021
  * But : Le but est décrit dans les commentaires ci-dessous décrivant la classe de ce fichier
  * Compilateur : OpenJDK 11
  * ---------------------------
  */
 
-package com.company;
+package ch.heigvd.poo.lab4.gantymaier;
 
+/**
+ * documentation de Int
+ */
 public class Int {
     private int value;
 
-    static public void swapValues(Int first, Int second) {
+    /**
+     * @param first
+     * @param second
+     * @author Elliot Ganty et Damien Maier
+     */
+    public static void swapValues(Int first, Int second) {
         int temp = first.value;
         first.value = second.value;
         second.value = temp;
+    }
+
+    public static void swapArrayElements(Int[] array, int firstIndex, int secondIndex) {
+        Int temp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = temp;
     }
 
     public Int(int value) {
