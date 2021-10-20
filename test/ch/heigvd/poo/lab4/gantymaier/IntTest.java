@@ -17,6 +17,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Teste la classe Int en créant des objets en les échangeant ou en échangeant leurs valeurs respectives.
+ */
 class IntTest {
     Int int1;
     Int int2;

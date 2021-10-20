@@ -4,7 +4,7 @@
  * Fichier : Sort.java
  * Auteurs : Elliot Ganty et Damien Maier
  * Date : 19.10.2021
- * But : Le but est décrit dans les commentaires ci-dessous décrivant la classe de ce fichier
+ * But : Le but est décrit dans les commentaires ci-dessous décrivant la classe de ce fichier.
  * Compilateur : OpenJDK 11
  * ---------------------------
  */
@@ -15,16 +15,29 @@ import ch.heigvd.poo.lab4.gantymaier.Int;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+/**
+ * Fournit des fonctions permettant de trier un tableau d'entiers ou d'objets Int.
+ */
 public class Sort {
+
     private enum SwapMethod {
         SWAP_ARRAY_ELEMENTS,
         SWAP_INT_VALUES_WITH_STATIC_METHOD,
         SWAP_INT_VALUES_WITH_INSTANCE_METHOD
     }
+
+    /**
+     * Indique la méthode de la classe Int à appeler lors de l'échange de deux éléments.
+     * pendant l'exécution de <code>sort(Int[] values)</code>
+     */
     private static final SwapMethod SWAP_METHOD_FOR_SORTING = SwapMethod.SWAP_INT_VALUES_WITH_INSTANCE_METHOD;
 
-
-
+    /**
+     * Trie un tableau d'entiers selon le tri à bulles.
+     *
+     * @param values tableau d'entiers à trier
+     * @author Elliot Ganty et Damien Maier
+     */
     public static void sort(int[] values) {
         if (values.length >= 2) {
             boolean sortingHasProgressed;
@@ -43,6 +56,12 @@ public class Sort {
         }
     }
 
+    /**
+     * Trie un tableau de Int selon le tri à bulles.
+     *
+     * @param values tableau d'objets de type Int à trier
+     * @author Elliot Ganty et Damien Maier
+     */
     public static void sort(Int[] values) {
         if (values.length >= 2) {
             boolean sortingHasProgressed;
@@ -67,6 +86,4 @@ public class Sort {
             } while (sortingHasProgressed);
         }
     }
-
-
 }
