@@ -34,8 +34,8 @@ public class Int {
      * Echange deux éléments d'un tableau d'objets Int.
      *
      * @param array       tableau contenant les objets
-     * @param firstIndex  1er  element à échanger
-     * @param secondIndex 2eme element à échanger
+     * @param firstIndex  position du 1er élément à échanger
+     * @param secondIndex position du 2eme élément à échanger
      * @author Elliot Ganty et Damien Maier
      */
     public static void swapArrayElements(Int[] array, int firstIndex, int secondIndex) {
