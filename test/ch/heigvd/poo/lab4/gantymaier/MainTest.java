@@ -29,6 +29,7 @@ class MainTest {
 
     @BeforeEach
     void setUp() {
+        // permet aux tests d'accéder au contenu que le programme affiche dans le terminal
         System.setOut(new PrintStream(printedContent));
     }
 

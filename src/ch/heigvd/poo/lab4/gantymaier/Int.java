@@ -57,14 +57,11 @@ public class Int {
     /**
      * Echange la valeur de l'objet courant avec la valeur d'un autre objet fourni en paramètre.
      *
-     * @param other autre objet avec lequel échanger l'élément courant
+     * @param other autre objet avec lequel échanger la valeur
      * @author Elliot Ganty et Damien Maier
      */
     public void swapValues(Int other) {
         swapValues(this, other);
-        /*int temp = value;
-        value = other.value;
-        other.value = temp;*/
     }
 
     /**

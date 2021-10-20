@@ -66,16 +66,22 @@ public class Main {
     /**
      * Récupère la valeur entière depuis une chaîne donnée en paramètre.
      *
-     * @param inputString argument de la ligne de commande
+     * @param inputString chaîne de caractères représentant un nombre entier
      * @return valeur entière correspondante
      * @author Elliot Ganty et Damien Maier
      */
     private static int convertStringToInt(String inputString) {
+        // si il y a un + ou un - au début du string, on récupère le sous string qui ne contient que les chiffres
         String digitsSubString = Character.isDigit(inputString.charAt(0)) ? inputString : inputString.substring(1);
+        // On calcule la valeur du nombre représenté par le string en parcourant les chiffres à l'envers (du chiffre
+        // de poids faible au chiffre de poids fort). On utilise le fait que chaque chiffre désigne un multiple d'une
+        // puissance de 10. Par exemple "234" donne 4*10^0 + 3*10^1 + 2*10^2
         char[] reversedDigits = new StringBuilder(digitsSubString).reverse().toString().toCharArray();
         int conversionResult = 0;
 
         for (int digitPosition = 0; digitPosition < reversedDigits.length; digitPosition++)
+            // - '0' permet d'obtenir la valeur numérique représentée par un caractère, parce que la soustraction se
+            // fait sur les valeurs ASCII des caractères
             conversionResult += (reversedDigits[digitPosition] - '0') * Math.pow(10, digitPosition);
 
         return inputString.charAt(0) == '-' ? -conversionResult : conversionResult;

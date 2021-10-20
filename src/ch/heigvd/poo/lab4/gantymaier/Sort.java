@@ -10,11 +10,6 @@
  */
 package ch.heigvd.poo.lab4.gantymaier;
 
-import ch.heigvd.poo.lab4.gantymaier.Int;
-
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
 /**
  * Fournit des fonctions permettant de trier un tableau d'entiers ou d'objets Int.
  */
@@ -27,7 +22,7 @@ public class Sort {
     }
 
     /**
-     * Indique la méthode de la classe Int à appeler lors de l'échange de deux éléments.
+     * Indique la méthode de la classe Int à appeler lors de l'échange de deux éléments
      * pendant l'exécution de <code>sort(Int[] values)</code>
      */
     private static final SwapMethod SWAP_METHOD_FOR_SORTING = SwapMethod.SWAP_INT_VALUES_WITH_INSTANCE_METHOD;
